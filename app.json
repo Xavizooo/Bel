@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Verdad o Reto",
+    "slug": "verdad-o-reto-neon",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "com.neonsunset.verdadoreto"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-asset",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundRecording": false,
+          "enableBackgroundPlayback": false
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "default-001",
+    "tipo": "verdad",
+    "texto": "¿Cuál ha sido tu cita más incómoda?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-002",
+    "tipo": "verdad",
+    "texto": "¿Qué canción cantarías conmigo en un karaoke?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-003",
+    "tipo": "verdad",
+    "texto": "¿Qué hábito mío te hace reír?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-004",
+    "tipo": "verdad",
+    "texto": "¿Qué personaje de ficción serías por un día?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-005",
+    "tipo": "verdad",
+    "texto": "¿Cuál fue tu primer pensamiento al conocerme?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-006",
+    "tipo": "verdad",
+    "texto": "¿Qué compra absurda te encantaría hacer?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-007",
+    "tipo": "verdad",
+    "texto": "¿Cuál es tu talento secreto menos útil?",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-008",
+    "tipo": "verdad",
+    "texto": "¿Qué recuerdo nuestro te gustaría revivir?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-009",
+    "tipo": "verdad",
+    "texto": "¿Qué detalle mío te hace sentir querido/a?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-010",
+    "tipo": "verdad",
+    "texto": "¿Cómo sería una escapada ideal para los dos?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-011",
+    "tipo": "verdad",
+    "texto": "¿Qué te gustaría que hiciéramos más seguido?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-012",
+    "tipo": "verdad",
+    "texto": "¿Qué canción te recuerda a nosotros?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-013",
+    "tipo": "verdad",
+    "texto": "¿Qué sueño te gustaría compartir conmigo?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-014",
+    "tipo": "verdad",
+    "texto": "¿En qué momento sentiste una conexión especial conmigo?",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-015",
+    "tipo": "verdad",
+    "texto": "¿Qué tipo de beso te gusta más?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-016",
+    "tipo": "verdad",
+    "texto": "¿Qué gesto mío te resulta más atractivo?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-017",
+    "tipo": "verdad",
+    "texto": "¿Qué ambiente elegirías para una noche romántica?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-018",
+    "tipo": "verdad",
+    "texto": "¿Qué cumplido te gustaría escuchar al oído?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-019",
+    "tipo": "verdad",
+    "texto": "¿Qué prenda mía te encanta?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-020",
+    "tipo": "verdad",
+    "texto": "¿Qué idea coqueta te gustaría proponerme, sin compromiso?",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-021",
+    "tipo": "reto",
+    "texto": "Imita un personaje y deja que tu pareja lo adivine.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-022",
+    "tipo": "reto",
+    "texto": "Inventa un anuncio publicitario sobre tu pareja.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-023",
+    "tipo": "reto",
+    "texto": "Baila durante veinte segundos sin música.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-024",
+    "tipo": "reto",
+    "texto": "Habla con voz de narrador durante el próximo turno.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-025",
+    "tipo": "reto",
+    "texto": "Dibuja a tu pareja con los ojos cerrados.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-026",
+    "tipo": "reto",
+    "texto": "Inventa un apodo divertido para los dos.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-027",
+    "tipo": "reto",
+    "texto": "Haz una declaración de amor usando tres nombres de comida.",
+    "categoria": "divertido"
+  },
+  {
+    "id": "default-028",
+    "tipo": "reto",
+    "texto": "Di tres cosas que admiras de tu pareja.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-029",
+    "tipo": "reto",
+    "texto": "Describe en treinta segundos vuestra cita ideal.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-030",
+    "tipo": "reto",
+    "texto": "Si ambos quieren, dense un abrazo de veinte segundos.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-031",
+    "tipo": "reto",
+    "texto": "Escribe una pequeña nota cariñosa para tu pareja.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-032",
+    "tipo": "reto",
+    "texto": "Elige una actividad sencilla para hacer juntos esta semana.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-033",
+    "tipo": "reto",
+    "texto": "Recuerda en voz alta un momento bonito que compartieron.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-034",
+    "tipo": "reto",
+    "texto": "Mírense a los ojos durante veinte segundos, si les resulta cómodo.",
+    "categoria": "romantico"
+  },
+  {
+    "id": "default-035",
+    "tipo": "reto",
+    "texto": "Si ambos quieren, dale un beso lento a tu pareja.",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-036",
+    "tipo": "reto",
+    "texto": "Susurra un cumplido coqueto al oído de tu pareja.",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-037",
+    "tipo": "reto",
+    "texto": "Invita a tu pareja a un baile lento de treinta segundos.",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-038",
+    "tipo": "reto",
+    "texto": "Ofrece un masaje de manos durante un minuto; tu pareja decide.",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-039",
+    "tipo": "reto",
+    "texto": "Acércate y deja que tu pareja elija entre beso, abrazo o pasar.",
+    "categoria": "picante"
+  },
+  {
+    "id": "default-040",
+    "tipo": "reto",
+    "texto": "Describe con tres palabras lo que más te atrae de tu pareja.",
+    "categoria": "picante"
+  }
+]
