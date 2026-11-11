@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Text, TextInput, View, Switch } from 'react-native';
 import { Button, TypePicker, CategoryPicker } from './UI';
 import { styles, colors } from '../theme';
@@ -15,6 +15,9 @@ export default function ItemForm({ initial, onSave, saving, onCancel }) {
  const [message, setMessage] = useState('');
  const selection = useRef({ start: texto.length, end: texto.length });
  const input = useRef(null);
+ const submitGate = useRef(false);
+ const alive = useRef(true);
+ useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
  const locked = localBusy || saving;
  const secondsValid = /^\d+$/.test(seconds) && Number(seconds) >= 5 && Number(seconds) <= 600;
  const draft = { tipo, categoria, texto: texto.trim(), conNombres, segundos: timerOn ? Number(seconds) : 0 };
@@ -28,17 +31,17 @@ export default function ItemForm({ initial, onSave, saving, onCancel }) {
   setTexto(next); selection.current = { start: start + token.length, end: start + token.length }; input.current?.focus();
  }
  async function submit() {
-  if (!valid || locked) return;
-  setLocalBusy(true); setMessage('');
+  if (!valid || locked || submitGate.current) return;
+  submitGate.current = true; setLocalBusy(true); setMessage('');
   try {
    await onSave(draft);
-   if (!initial) { setTexto(''); setConNombres(false); setTimerOn(false); setSeconds('30'); selection.current = { start: 0, end: 0 }; setMessage('Tarjeta guardada. Ya puedes usarla en el juego.'); }
-  } catch { setMessage('No se pudo guardar. Tu texto sigue aquí; inténtalo otra vez.'); }
-  finally { setLocalBusy(false); }
+   if (!initial && alive.current) { setTexto(''); setConNombres(false); setTimerOn(false); setSeconds('30'); selection.current = { start: 0, end: 0 }; setMessage('Tarjeta guardada. Ya puedes usarla en el juego.'); }
+  } catch { if (alive.current) setMessage('No se pudo guardar. Tu texto sigue aquí; inténtalo otra vez.'); }
+  finally { submitGate.current = false; if (alive.current) setLocalBusy(false); }
  }
  return <View style={{ gap: 18 }}>
-  <Text style={styles.label}>TIPO</Text><TypePicker value={tipo} onChange={setTipo} />
-  <Text style={styles.label}>CATEGORÍA</Text><CategoryPicker value={categoria} onChange={setCategoria} />
+  <Text style={styles.label}>TIPO</Text><TypePicker value={tipo} onChange={setTipo} disabled={locked} />
+  <Text style={styles.label}>CATEGORÍA</Text><CategoryPicker value={categoria} onChange={setCategoria} disabled={locked} />
   <Text style={styles.label}>TEXTO</Text>
   <TextInput ref={input} accessibilityLabel="Texto de la verdad o reto" style={styles.input} multiline maxLength={500} value={texto} onChangeText={setTexto} onSelectionChange={event => { selection.current = event.nativeEvent.selection; }} placeholder="Escribe tu pregunta o reto…" placeholderTextColor="#A598BC" editable={!locked} />
   <Text style={styles.muted}>{texto.length}/500</Text>

@@ -60,3 +60,24 @@ Comprobar en tu dispositivo:
 8. Temporizador: aparece tras revelar, pulsa solo en los últimos tres segundos en marcha y muestra una onda al llegar a cero.
 9. Reducir movimiento: sin intro, corazones, inclinación ni giro prolongado; todavía se puede revelar, elegir y jugar.
 10. Probar pantalla estrecha, fuente grande y una pregunta de 500 caracteres para verificar la altura de la tarjeta.
+
+## Revisión del módulo Lista
+
+- `npm test`: 37 pruebas aprobadas (28 existentes y 9 de integración nuevas).
+- Las pruebas nuevas montan List, ItemForm y Store reales con React Test Renderer. Solo se simulan la superficie nativa/animada y el almacenamiento del dispositivo. No son una comprobación visual en navegador ni teléfono.
+- Se comprueban filtros, lista vacía, metadatos de nombres y duración, edición de todos los campos conservando el ID, cancelación y recarga.
+- Se comprueban fallos de escritura: conservan formulario o tarjeta anterior y permiten reintentar.
+- Se comprueban confirmación/cancelación de borrado, eliminación de la última tarjeta sin volver a sembrar predeterminadas y dobles toques al guardar y borrar.
+- Se sustituyó Alert.alert: la implementación instalada de React Native Web es vacía y no mostraba la confirmación de borrado.
+- Se fija el tamaño del contenedor sin ScrollView y se desplazan encabezado y tarjetas con FlatList. El desplazamiento final todavía debe revisarse físicamente en el dispositivo.
+- Análisis de los 28 archivos JS/JSX completado sin errores.
+- Exportaciones web y Android/Hermes completadas.
+
+Revisión manual restante: abrir Lista en ventana pequeña, desplazarse hasta la última tarjeta y comprobar que la confirmación de borrado es visible y accesible, con texto largo y fuente ampliada.
+
+## Actualización Neon Portal
+
+- Se reemplaza únicamente la animación de inicio, conservando Lista revisada y el juego.
+- Las 37 pruebas automáticas existentes pasan. Se verifica la sintaxis de la nueva entrada y se exporta para web y Android/Hermes.
+- No se añaden pruebas de píxeles ni se afirma validación visual o de cuadros por segundo. La apariencia y fluidez deben comprobarse en el dispositivo.
+- Revisión manual: entrada completa y omisión, recarga, volver al Inicio sin repetir, ventanas de poca altura, opción de reducir movimiento y ausencia de bloqueo al terminar la escena.

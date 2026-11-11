@@ -48,24 +48,24 @@ export function Background({ children, active = false }) {
  return <View style={{ flex: 1, backgroundColor: colors.bg, overflow: 'hidden' }}><LinearGradient colors={['#221129', '#100B1A', '#1D1529']} locations={[0, .5, 1]} style={StyleSheet.absoluteFillObject} /><Glow color={colors.truth} active={active} /><Glow color="#A484FF" reverse active={active} />{children}</View>;
 }
 export function Screen({ children, scroll = true, active = false, hearts = false }) {
- const body = <View style={{ width: '100%', maxWidth: 660, alignSelf: 'center', paddingHorizontal: 22, paddingTop: 20, paddingBottom: 32, gap: 20, flexGrow: 1 }}>{children}</View>;
+ const body = <View style={{ width: '100%', maxWidth: 660, alignSelf: 'center', paddingHorizontal: 22, paddingTop: 20, paddingBottom: 32, gap: 20, flexGrow: 1, flex: scroll ? undefined : 1, minHeight: scroll ? undefined : 0 }}>{children}</View>;
  return <Background active={active}>{hearts && <FloatingHearts active={active} />}<SafeAreaView edges={['bottom', 'left', 'right']} style={{ flex: 1 }}><KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>{scroll ? <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ flexGrow: 1 }}>{body}</ScrollView> : body}</KeyboardAvoidingView></SafeAreaView></Background>;
 }
 export function GameScreen(props) {
  const focused = useIsFocused();
  return <Screen {...props} active={focused} />;
 }
-function CategoryChip({ category, selected, onPress }) {
+function CategoryChip({ category, selected, onPress, disabled }) {
  const scale = useSharedValue(1);
  const reduced = useMotion();
  const animated = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
- return <Animated.View style={animated}><Pressable accessibilityRole="button" accessibilityState={{ selected }} onPress={onPress}
+ return <Animated.View style={animated}><Pressable accessibilityRole="button" accessibilityState={{ selected, disabled: !!disabled }} disabled={disabled} onPress={onPress}
   onPressIn={() => { if (!reduced) scale.value = withSpring(.94); }} onPressOut={() => { scale.value = withSpring(1, { damping: 18 }); }}
   style={{ paddingHorizontal: 15, paddingVertical: 12, borderRadius: 18, borderWidth: 1, borderColor: selected ? colors.dare + 'AA' : colors.border, backgroundColor: selected ? '#FF9E0020' : '#FFFFFF05' }}><Text style={[styles.muted, { color: selected ? '#FFD8A0' : colors.muted }]}>{LABELS[category]}</Text></Pressable></Animated.View>;
 }
-export function CategoryPicker({ value, onChange, all = false }) {
- return <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>{(all ? ['todos', ...CATEGORIES] : CATEGORIES).map(c => <CategoryChip key={c} category={c} selected={c === value} onPress={() => onChange(c)} />)}</View>;
+export function CategoryPicker({ value, onChange, all = false, disabled = false }) {
+ return <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>{(all ? ['todos', ...CATEGORIES] : CATEGORIES).map(c => <CategoryChip key={c} category={c} selected={c === value} disabled={disabled} onPress={() => onChange(c)} />)}</View>;
 }
-export function TypePicker({ value, onChange }) {
- return <View style={styles.row}>{['verdad', 'reto'].map(t => <Button key={t} title={t === 'verdad' ? 'Verdad' : 'Reto'} secondary={t !== value} accent={t === 'verdad' ? colors.truth : colors.dare} onPress={() => onChange(t)} style={{ flex: 1 }} />)}</View>;
+export function TypePicker({ value, onChange, disabled = false }) {
+ return <View style={styles.row}>{['verdad', 'reto'].map(t => <Button key={t} title={t === 'verdad' ? 'Verdad' : 'Reto'} disabled={disabled} secondary={t !== value} accent={t === 'verdad' ? colors.truth : colors.dare} onPress={() => onChange(t)} style={{ flex: 1 }} />)}</View>;
 }

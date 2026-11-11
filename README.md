@@ -112,3 +112,11 @@ Cada tarjeta puede salir una vez a cada persona en la ronda. Los contadores corr
 ## Neon Hearts
 
 Incluye entrada omitible de tres segundos con corazones y luz, corazones ambientales en Inicio, flecha de ruleta con clics por cruce de segmento, realce del ganador, expansión al elegir, tarjetas boca abajo con revelación 3D e inclinación y pulso/onda al finalizar el temporizador. La entrada no se repite al volver al Inicio. Los efectos respetan reducir movimiento. Consulta `REEMPLAZAR.md`.
+
+## Lista revisada
+
+Se incluye confirmación de borrado propia para web/móvil, corrección del área de desplazamiento y protección contra toques repetidos. Las pruebas de integración verifican filtros, edición de nombres/temporizador, persistencia, cancelación y recuperación ante fallos de almacenamiento. Ejecuta npm ci para instalar también las herramientas de prueba y npm test para las 37 comprobaciones.
+
+## Neon Portal
+
+Nueva entrada de 4,3 segundos: anillos en perspectiva, corazones orbitales que convergen y se dispersan, estrellas, ondas y título con entrada desde lados opuestos. Sustituye la entrada anterior. Se puede omitir con Entrar y respeta reducir movimiento. Sin nuevas dependencias.
